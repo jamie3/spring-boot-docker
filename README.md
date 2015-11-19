@@ -2,11 +2,26 @@
 
 An example on how to use Spring Boot and Docker. This example is referenced from https://spring.io/guides/gs/spring-boot-docker/.
 
+## Pre-Requisites
+
+Docker
+Docker Toolbox (MacOSX) - https://www.docker.com/docker-toolbox
+ > After installation follow the setup procedure http://docs.docker.com/mac/step_one/
+
+Apache Maven 3.x - https://maven.apache.org/
+Java JDK 1.8.x - http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
 ## Build
 
-To build you need Apache Maven 3.x
+To build the Spring Boot Application you need Apache Maven 3.x
 
 mvn install
+
+This will create a jar file in the target directory
+
+To build the Docker Image with Maven use the docker-maven-plugin and execute the following:
+
+mvn package docker:build
 
 ## Run
 
