@@ -13,6 +13,10 @@ Java JDK 1.8.x - http://www.oracle.com/technetwork/java/javase/downloads/jdk8-do
 
 ## Build
 
+I first had to change the tcp port that docker was listening on.
+
+docker -H tcp://localhost:2375
+
 To build the Spring Boot Application you need Apache Maven 3.x
 
 mvn install
@@ -23,7 +27,7 @@ To build the Docker Image with Maven use the docker-maven-plugin and execute the
 
 mvn package docker:build
 
-## Run
+## Run Application using Java
 
 To run the application execute the following on the command line in the root project.
 
@@ -34,3 +38,9 @@ After the application has started goto the following URL
 http://localhost:8080
 
 You should see the Hello Docker World message
+
+## Run Application using Docker
+
+On the command line execute the following:
+
+docker run -p 8080:8080 -t westjet/spring-boot-docker
